@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="icon" href="logo.png">
 
   <head>
     <meta charset="UTF-8" />
-    <title>Elia's Maze Game</title>
+    <title>Elia's Labyrinth</title>
 
     <!-- Loads a CSS style file -->
     <link rel="stylesheet" href="WorkingStyles.css">
 
     <!-- Loads a javascript library file -->
     <script src="WorkingLibrary.js"></script>
-  </head>
-
+  </head> 
+  
   <body>
     <p class="pageTitle" id="pageTitle_id"></p>
-
-    <div class="workingContainer">
-      
-      <!-- Answers go here -->
-      <div class="workingSpace" id="workingSpace_id"></div>
-      
-      <!-- Trigger buttons -->
-      <div class="buttonSpace">
-		  <button onclick="start()" class="btn">Start!</button>
-		  <button onclick="addBlockToArray()" class="btn">Add Red Block to Array</button>
-		  <button onclick="drawBlockArray()" class="btn">Draw Array</button>
-		  <button onclick="addRandomColorBlocktoArray()" class="btn">Add Random Color Block to Array</button>	  
-		  <button onclick="startMain(MainLoop, 100)" class="btn">Start Main Loop</button>
-		  <button onclick="stopMain()" class="btn">Stop Main Loop</button>
-		  <button onclick="clearAll()" class="btn">Clear!</button>
+    <div id="Message-container">
+      <div id="message">
+        <h1>Congratulations!</h1>
+        <p>You reached home!</p>
+        <p id="moves"></p>
+        <input id="okBtn" type="button" onclick="toggleVisability('Message-container')" value="Cool!"/>
       </div>
     </div>
-
+    <div class="workingContainer">
+      <!-- Trigger buttons -->
+      <div class="buttonSpace">
+        <div id="menu">
+          <div class="custom-select">
+            <select id="diffSelect">
+              <option value="Knight"></option>
+              <option value="Mage"></option>
+            </select>
+          </div> 
+          <div class="custom-select">
+            <select id="diffSelect">
+              <option value="Medicore"></option>
+              <option value="Hardcore"></option>
+            </select>
+          </div> 
+        </div>
+        <input id="start" type="button" onclick="start()" value="Start"/>
+        <p id="instructions">Use arrows to make it to the cave!</p>
+        <!-- <button onclick="mode()" class="btn">Difficulty</button> -->
+		  <!-- <button onclick="start()" class="btn">Start!</button> -->
+		  <!-- <button onclick="addBlockToArray()" class="btn">Add Red Block to Array</button> -->
+		  <!-- <button onclick="drawBlockArray()" class="btn">Draw Array</button> -->
+		  <!-- <button onclick="addRandomColorBlocktoArray()" class="btn">Add Random Color Block to Array</button>	   -->
+		  <!-- <button onclick="startMain(MainLoop, 100)" class="btn">Start Main Loop</button> -->
+		  <!-- <button onclick="stopMain()" class="btn">Stop Main Loop</button> -->
+		  <!-- <button onclick="clearAll()" class="btn">Clear!</button> -->
+      </div>
+    </div>
+ <!-- Answers go here -->
+ <div class="workingSpace" id="workingSpace_id"></div>
+      
     <!-- Errors will show here -->
     <div class="errorSpace" id="errorSpace_id"></div>
 
@@ -46,3 +69,7 @@
   </footer>
 
 </html>
+
+<!-- git add . -->
+<!-- git commit -m "ur msg" -->
+<!-- git push origin main -->
